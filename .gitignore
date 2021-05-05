@@ -27,3 +27,4 @@
 *~
 # Undo-tree save-files
 *.~undo-tree
+/local.el

@@ -170,6 +170,13 @@
 (global-set-key (kbd "<kp-subtract>")
                 'my-decrement-number-at-point)
 
+;; For local setup
+(defun my/load-file-if-exists (file)
+  "If FILE exists, load it."
+  ()
+  (when (file-exists-p file)
+    (load-file file)))
+
 ;; Never load settings from .Xresources
 (setq inhibit-x-resources t)
 
@@ -332,6 +339,9 @@
 ;; Enabled commands
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
+
+;; Local setup
+(my/load-file-if-exists "~/.emacs.d/local.el")
 
 ;; Custom-set turd
 (custom-set-variables
