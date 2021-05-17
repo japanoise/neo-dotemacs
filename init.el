@@ -355,6 +355,10 @@
 (use-package dumb-jump)
 (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
 
+;; Whitespace cleanup
+(use-package whitespace-cleanup-mode)
+(global-whitespace-cleanup-mode)
+
 ;; ----------------------------- END ---------------------------------
 
 ;; Snazzy theme!
