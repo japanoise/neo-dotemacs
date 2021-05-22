@@ -190,7 +190,6 @@
   (switch-to-buffer "*ASCII*")
   (erase-buffer)
   (setq buffer-read-only nil)        ;; Not need to edit the content, just read mode (added)
-  (local-set-key "q" 'bury-buffer)   ;; Nice to have the option to bury the buffer (added)
   (setq lower32 '("nul" "soh" "stx" "etx" "eot" "enq" "ack" "bel"
                   "bs" "ht" "nl" "vt" "np" "cr" "so" "si"
                   "dle" "dc1" "dc2" "dc3" "dc4" "nak" "syn" "etb"
