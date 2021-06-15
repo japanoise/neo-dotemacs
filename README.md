@@ -79,7 +79,7 @@ the default.
 Some dependencies are external to Emacs and will need some manual attention.
 
 - https://github.com/ggreer/the_silver_searcher#installing for dumb-jump.
-- (Windows only) hunspell - see below.
+- A spellchecker; Ispell on Linux and Mac, hunspell on Windows - see below.
 
 ## Spelling on Windows
 
