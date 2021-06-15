@@ -293,6 +293,10 @@
 (setq show-paren-delay 0)
 (show-paren-mode 1)
 
+;; Update PATH from zsh (or bash, if you're not as sexy as me)
+(use-package exec-path-from-shell)
+(exec-path-from-shell-initialize)
+
 ;; Flycheck and Flyspell
 (use-package flycheck
   :ensure t
@@ -383,7 +387,7 @@
  '(custom-safe-themes
    '("7220c44ef252ec651491125f1d95ad555fdfdc88f872d3552766862d63454582" default))
  '(package-selected-packages
-   '(browse-kill-ring dumb-jump go-mode company auto-complete auto-package-update no-littering editorconfig smex markdown-mode wc-mode flycheck smartparens rainbow-delimiters delight base16-theme diminish anzu use-package)))
+   '(exec-path-from-shell browse-kill-ring dumb-jump go-mode company auto-complete auto-package-update no-littering editorconfig smex markdown-mode wc-mode flycheck smartparens rainbow-delimiters delight base16-theme diminish anzu use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
