@@ -44,8 +44,12 @@
 (setq frame-resize-pixelwise t)
 
 ;; Use a sane font
-(add-to-list 'default-frame-alist
-             '(font . "Go Mono 11"))
+;; It looks small on Mac, so make it 2 points bigger there.
+(if (eq system-type 'darwin)
+    (add-to-list 'default-frame-alist
+                 '(font . "Go Mono 13"))
+    (add-to-list 'default-frame-alist
+                 '(font . "Go Mono 11")))
 
 ;; Eternal blinking cursor
 (setq-default cursor-type 'bar)
