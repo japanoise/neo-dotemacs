@@ -1,5 +1,10 @@
 # Neo-emacsd
 
+Your humble correspondent's personal Emacs configuration - because [Emacs loves
+all its users](https://emacs.love/tales/emacs-loves-all-its-users.html).
+
+---
+
 Every Emacs user's .emacs.d will inevitably grow until they find it unwieldy, at
 which point the sensible thing to do is to tear it down and rebuild it.
 
