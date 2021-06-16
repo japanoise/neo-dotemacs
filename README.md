@@ -19,10 +19,13 @@ is one such case. Some things wrong with it:
 * It was full of old stuff from my old workplace.
 * There was a lot of hacking to get it to avoid using TLS to work around
   Marmalade's shittiness - despite me hardly using Marmalade.
-* I heard a rumor that Helm was being deprecated and unmaintained (though I
-  can't find any traces of this now). Ido is simpler and bundled with Emacs, so
-  I'm trying it out now (I never used any advanced helm features anyway, just
-  used it as a completion engine).
+* Helm's author seems to be experiencing burn-out, and may in the future exit
+  Emacs development: [here's the issue I saw on
+  this](https://github.com/emacs-helm/helm/issues/2386); apparently it's
+  [damaging to the maintainer's family,
+  too](https://sachachua.com/blog/2018/09/interview-with-thierry-volpiatto/).
+  Ido is simpler and bundled with Emacs, so I'm trying it out now (I never used
+  any advanced helm features anyway, just used it as a completion engine).
 
 And the main one: My desire was a .emacs.d that you could just clone into your
 home directory and forget about. I even set up some of my scripts to do
