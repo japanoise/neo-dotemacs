@@ -310,6 +310,12 @@
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 (add-hook 'text-mode-hook 'flyspell-mode)
 
+(defun my/disable-flycheck () "Disable flycheck in buffer." (interactive)
+       (flycheck-mode -1))
+
+;; bcoz rubocop is broken on OSX atm
+(add-hook 'ruby-mode-hook 'my/disable-flycheck)
+
 ;; Which-key - spacemacs' nice little prefix popup
 (use-package which-key :diminish which-key-mode)
 (setq which-key-echo-keystrokes 0.1)
