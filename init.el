@@ -294,8 +294,10 @@
 (show-paren-mode 1)
 
 ;; Update PATH from zsh (or bash, if you're not as sexy as me)
-(use-package exec-path-from-shell)
-(exec-path-from-shell-initialize)
+;; Doesn't work on windows so don't bother
+(unless (eq system-type 'windows-nt)
+  (use-package exec-path-from-shell)
+  (exec-path-from-shell-initialize))
 
 ;; Flycheck and Flyspell
 (use-package flycheck
