@@ -377,6 +377,16 @@
 ;; rainbow-mode
 (use-package rainbow-mode)
 
+;; All-the-icons
+;; install fonts with all-the-icons-install-fonts
+(use-package all-the-icons)
+
+;; doom modeline
+(use-package doom-modeline
+  :ensure t)
+(doom-modeline-mode 1)
+(setq doom-modeline-continuous-word-count-modes '(markdown-mode gfm-mode org-mode))
+
 ;; ----------------------------- END ---------------------------------
 
 ;; Snazzy theme!
@@ -395,8 +405,13 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(column-number-mode t)
  '(custom-safe-themes
    '("7220c44ef252ec651491125f1d95ad555fdfdc88f872d3552766862d63454582" default))
+ '(doom-modeline-default-eol-type 0)
+ '(doom-modeline-enable-word-count t)
+ '(doom-modeline-height 21)
+ '(doom-modeline-mode t)
  '(package-selected-packages
    '(rainbow-mode exec-path-from-shell browse-kill-ring dumb-jump go-mode company auto-complete auto-package-update no-littering editorconfig smex markdown-mode wc-mode flycheck smartparens rainbow-delimiters delight base16-theme diminish anzu use-package)))
 (custom-set-faces
