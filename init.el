@@ -378,7 +378,7 @@
 (use-package rainbow-mode)
 
 ;; All-the-icons
-;; install fonts with all-the-icons-install-fonts
+;; install fonts with (all-the-icons-install-fonts)
 (use-package all-the-icons)
 
 ;; doom modeline
