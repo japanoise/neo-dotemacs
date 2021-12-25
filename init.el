@@ -448,6 +448,9 @@ Version 2017-11-01"
 (add-hook 'visual-line-mode-hook #'visual-fill-column-mode)
 (setq-default visual-fill-column-center-text t)
 
+;; Webpaste
+(use-package webpaste)
+
 ;; ----------------------------- END ---------------------------------
 
 ;; Snazzy theme!
@@ -474,7 +477,7 @@ Version 2017-11-01"
  '(doom-modeline-height 21)
  '(doom-modeline-mode t)
  '(package-selected-packages
-   '(visual-fill-column go-rename company-go godoctor rainbow-mode exec-path-from-shell browse-kill-ring dumb-jump go-mode company auto-complete auto-package-update no-littering editorconfig smex markdown-mode wc-mode flycheck smartparens rainbow-delimiters delight base16-theme diminish anzu use-package)))
+   '(webpaste visual-fill-column go-rename company-go godoctor rainbow-mode exec-path-from-shell browse-kill-ring dumb-jump go-mode company auto-complete auto-package-update no-littering editorconfig smex markdown-mode wc-mode flycheck smartparens rainbow-delimiters delight base16-theme diminish anzu use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
