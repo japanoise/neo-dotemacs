@@ -141,7 +141,8 @@ Version 2017-11-01"
 (setq-default major-mode 'text-mode)
 
 ;; Disable text-scale-adjust
-(dolist (key '("C-x C-0" "C-x C-=" "C-x C--" "C-x C-+" "<C-wheel-up>" "<C-wheel-down>"))
+(dolist (key '("C-x C-0" "C-x C-=" "C-x C--" "C-x C-+" "<C-wheel-up>"
+               "<C-wheel-down>" "<C-mouse-4>" "<C-mouse-5>"))
   (global-unset-key (kbd key)))
 
 ;; Spaces by default (momentum)
