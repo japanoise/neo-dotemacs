@@ -491,6 +491,7 @@ Version 2017-11-01"
  '(fixed-pitch ((t (:family "Go Mono"))))
  '(font-lock-comment-delimiter-face ((t (:background "purple4" :foreground "plum"))))
  '(font-lock-comment-face ((t (:background "purple4" :foreground "plum"))))
+ '(mouse ((t (:background "white"))))
  '(tooltip ((t (:inherit default :background "#34353e" :foreground "white")))))
 
 (provide 'init)
