@@ -384,7 +384,13 @@ Version 2017-11-01"
   (editorconfig-mode 1))
 
 ;; LSP Mode
-(use-package lsp-mode)
+(use-package lsp-mode
+  :hook (lsp-mode . (lambda ()
+                      (let ((lsp-keymap-prefix "C-c l"))
+                        (lsp-enable-which-key-integration))))
+  :config
+  (define-key lsp-mode-map (kbd "C-c l") lsp-command-map))
+(require 'lsp-ido)
 
 ;; Go mode. Dependencies:
 ;; - go install github.com/rogpeppe/godef@latest
