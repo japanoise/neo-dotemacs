@@ -392,6 +392,12 @@ Version 2017-11-01"
   (define-key lsp-mode-map (kbd "C-c l") lsp-command-map))
 (require 'lsp-ido)
 
+;; C-mode & Sepples-mode lsp.
+;; Dependencies: clangd (and bear to generate compile_commands.json)
+;; See https://emacs-lsp.github.io/lsp-mode/tutorials/CPP-guide/
+(add-hook 'c-mode-hook 'lsp)
+(add-hook 'c++-mode-hook 'lsp)
+
 ;; Go mode. Dependencies:
 ;; - go install github.com/rogpeppe/godef@latest
 ;; - go install golang.org/x/tools/cmd/goimports@latest
