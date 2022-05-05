@@ -362,6 +362,12 @@ Version 2017-11-01"
 (global-undo-tree-mode 1)
 
 ;; Markdown mode
+(defun my/insert-markdown-link ()
+  "Insert a markdown link (known behavior from tiddlywiki)."
+  (interactive)
+  (save-excursion
+    (insert "[]()"))
+  (forward-char 1))
 (use-package wc-mode)
 (use-package markdown-mode
   :ensure t
@@ -369,7 +375,8 @@ Version 2017-11-01"
   (("README\\.md\\'" . gfm-mode)
    ("\\.md\\'" . markdown-mode)
    ("\\.markdown\\'" . markdown-mode))
-  :init (setq markdown-command "multimarkdown"))
+  :init (setq markdown-command "multimarkdown")
+  :bind ("M-L" . my/insert-markdown-link))
 (add-hook 'markdown-mode-hook
           (lambda ()
             (setq-local fill-column 80)
