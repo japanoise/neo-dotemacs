@@ -358,7 +358,8 @@ Version 2017-11-01"
 ;; Non-confusing undo
 (use-package undo-tree
   :diminish undo-tree-mode
-  :bind (("C-?" . undo-tree-redo)))
+  :bind (("C-?" . undo-tree-redo)
+         ("C-x C-/" . undo-tree-redo)))
 (global-undo-tree-mode 1)
 
 ;; Markdown mode
