@@ -433,6 +433,12 @@ Version 2017-11-01"
 ;; cmake
 (use-package cmake-mode)
 
+;; SLIME as per https://lisp-lang.org/learn/getting-started/
+(if (file-exists-p "~/.quicklisp")
+    (progn
+      (load (expand-file-name "~/.quicklisp/slime-helper.el"))
+      (setq inferior-lisp-program "sbcl")))
+
 ;; dumb-jump
 (use-package dumb-jump)
 (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
