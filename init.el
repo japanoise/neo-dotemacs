@@ -431,6 +431,9 @@ Version 2017-11-01"
 (use-package go-eldoc
   :init (add-hook 'go-mode-hook 'go-eldoc-setup))
 
+;; Elixir
+(use-package elixir-mode)
+
 ;; Lua Mode
 (use-package lua-mode)
 
