@@ -506,7 +506,7 @@ Version 2017-11-01"
  '(lua-indent-level 2)
  '(org-link-descriptive nil)
  '(package-selected-packages
-   '(cmake-mode lua-mode lsp-mode elpher webpaste visual-fill-column go-rename company-go godoctor rainbow-mode exec-path-from-shell browse-kill-ring dumb-jump go-mode company auto-complete auto-package-update no-littering editorconfig smex markdown-mode wc-mode flycheck smartparens rainbow-delimiters delight base16-theme diminish anzu use-package)))
+   '(treemacs elixir-mode cmake-mode lua-mode lsp-mode elpher webpaste visual-fill-column go-rename company-go godoctor rainbow-mode exec-path-from-shell browse-kill-ring dumb-jump go-mode company auto-complete auto-package-update no-littering editorconfig smex markdown-mode wc-mode flycheck smartparens rainbow-delimiters delight base16-theme diminish anzu use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
