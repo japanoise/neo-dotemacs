@@ -444,7 +444,8 @@ Version 2017-11-01"
 (if (file-exists-p "~/.quicklisp")
     (progn
       (load (expand-file-name "~/.quicklisp/slime-helper.el"))
-      (setq inferior-lisp-program "sbcl")))
+      (setq inferior-lisp-program "sbcl")
+      (add-hook 'slime-repl-mode-hook 'rainbow-delimiters-mode)))
 
 ;; dumb-jump
 (use-package dumb-jump)
