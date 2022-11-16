@@ -230,6 +230,11 @@ Version 2017-11-01"
                                       (setq i (+ 32 i)) i (single-key-description i)))
                       (setq i (- i 96))))))
 
+(defun my/filename ()
+    "Copy the full path of the current buffer."
+    (interactive)
+    (kill-new (buffer-file-name (window-buffer (minibuffer-selected-window)))))
+
 ;; --------------------------- PACKAGES ------------------------------
 
 (require 'package)
