@@ -12,6 +12,9 @@
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 
+;; Load path
+(add-to-list 'load-path "~/.emacs.d/")
+
 ;; Some keys
 (global-set-key [f6]
                 'universal-argument)
@@ -452,6 +455,15 @@ Version 2017-11-01"
       (setq inferior-lisp-program "sbcl")
       (add-hook 'slime-repl-mode-hook 'rainbow-delimiters-mode)))
 
+;; Ren'py
+(require 'stupid-indent-mode)
+(use-package renpy)
+(defun my/renpy-hook ()
+  "Hook for renpy.  Use stupid indent."
+  (stupid-indent-mode)
+  (eldoc-mode -1))
+(add-hook 'renpy-mode-hook 'my/renpy-hook)
+
 ;; dumb-jump
 (use-package dumb-jump)
 (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
@@ -512,7 +524,7 @@ Version 2017-11-01"
  '(lua-indent-level 2)
  '(org-link-descriptive nil)
  '(package-selected-packages
-   '(treemacs elixir-mode cmake-mode lua-mode lsp-mode elpher webpaste visual-fill-column go-rename company-go godoctor rainbow-mode exec-path-from-shell browse-kill-ring dumb-jump go-mode company auto-complete auto-package-update no-littering editorconfig smex markdown-mode wc-mode flycheck smartparens rainbow-delimiters delight base16-theme diminish anzu use-package)))
+   '(renpy treemacs elixir-mode cmake-mode lua-mode lsp-mode elpher webpaste visual-fill-column go-rename company-go godoctor rainbow-mode exec-path-from-shell browse-kill-ring dumb-jump go-mode company auto-complete auto-package-update no-littering editorconfig smex markdown-mode wc-mode flycheck smartparens rainbow-delimiters delight base16-theme diminish anzu use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
