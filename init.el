@@ -479,6 +479,10 @@ Version 2017-11-01"
 ;; install fonts with (all-the-icons-install-fonts)
 (use-package all-the-icons)
 
+;; Nerd icons - similar to all the icons I guess
+;; (nerd-icons-install-fonts)
+(use-package nerd-icons)
+
 ;; doom modeline
 (use-package doom-modeline
   :ensure t)
