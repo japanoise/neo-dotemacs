@@ -13,7 +13,7 @@
 (tool-bar-mode 0)
 
 ;; Load path
-(add-to-list 'load-path "~/.emacs.d/")
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor"))
 
 ;; Some keys
 (global-set-key [f6]
