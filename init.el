@@ -502,6 +502,8 @@ Version 2017-11-01"
 
 ;; Elpher: For Gopher and Gemini
 (use-package elpher)
+(define-key elpher-mode-map (kbd "n") 'elpher-next-link)
+(define-key elpher-mode-map (kbd "p") 'elpher-prev-link)
 
 ;; ----------------------------- END ---------------------------------
 
