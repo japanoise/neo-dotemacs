@@ -371,8 +371,8 @@ Version 2017-11-01"
 (global-undo-tree-mode 1)
 
 ;; Treemacs
-(use-package treemacs)
-(define-key treemacs-mode-map [mouse-1] #'treemacs-single-click-expand-action)
+(use-package treemacs
+  :bind ([mouse-1] . treemacs-single-click-expand-action))
 
 ;; Markdown mode
 (defun my/insert-markdown-link ()
