@@ -369,6 +369,8 @@ Version 2017-11-01"
   :bind (("C-?" . undo-tree-redo)
          ("C-x C-/" . undo-tree-redo)))
 (global-undo-tree-mode 1)
+;; Prevent undo tree files from polluting your git repo
+(setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/var/undo")))
 
 ;; Treemacs
 (use-package treemacs
