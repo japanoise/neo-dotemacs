@@ -278,6 +278,7 @@ Version 2017-11-01"
 ;; Ido - starting to prefer it over helm.
 (require 'ido)
 (ido-mode t)
+(setq ido-enable-flex-matching t)
 (use-package smex)
 (smex-initialize)
 (global-set-key (kbd "M-x") 'smex)
