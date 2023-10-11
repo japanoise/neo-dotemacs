@@ -28,6 +28,8 @@
 # Undo-tree save-files
 *.~undo-tree
 
+# markdown preview
+/emacs-livedown/
+
 # Local setup
 /local.el
-/emacs-livedown/
