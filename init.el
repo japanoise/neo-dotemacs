@@ -259,7 +259,11 @@ Version 2017-11-01"
 (use-package no-littering)
 ;; backup in one place. flat, no tree structure
 ;; Has to happen after no-littering
+(make-directory "~/.emacs_backups/" t)
 (setq backup-directory-alist '(("" . "~/.emacs.d/emacs-backup")))
+;; Don't drop autosaves everywhere
+(make-directory "~/.emacs_autosave/" t)
+(setq auto-save-file-name-transforms '((".*" "~/.emacs_autosave/" t)))
 
 ;; Because the update workflow is unintuitive:
 (use-package auto-package-update)
