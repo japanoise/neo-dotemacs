@@ -430,6 +430,7 @@ Version 2017-11-01"
 ;; - go install golang.org/x/tools/cmd/goimports@latest
 ;; - go install golang.org/x/tools/cmd/gorename@latest
 ;; - go install golang.org/x/tools/gopls@latest
+;; - go install github.com/nsf/gocode@latest
 (use-package go-mode
   :config (use-package godoctor):bind
   (("C-c C-r" . go-remove-unused-imports)))
