@@ -32,6 +32,27 @@
 (global-set-key (kbd "M-n") 'forward-paragraph)
 (global-set-key (kbd "M-p") 'backward-paragraph)
 
+;; Some commands
+(defun my/pivot-chars ()
+  "Pivot chars around each other."
+  (interactive)
+  (transpose-chars 1)
+  (transpose-chars 1)
+  (backward-char)
+  (backward-char)
+  (transpose-chars 1)
+  (backward-char))
+
+(defun my/pivot-words ()
+  "Pivot words around each other."
+  (interactive)
+  (transpose-words 1)
+  (transpose-words 1)
+  (backward-word)
+  (backward-word)
+  (transpose-words 1)
+  (backward-word))
+
 ;; chameleon-prefix
 (progn
   (defvar chameleon-prefix-map)
@@ -40,6 +61,8 @@
   (define-key chameleon-prefix-map (kbd "r") 'replace-regexp)
   (define-key chameleon-prefix-map (kbd "q r") 'query-replace-regexp)
   (define-key chameleon-prefix-map (kbd "q s") 'query-replace)
+  (define-key chameleon-prefix-map (kbd "t") 'my/pivot-chars)
+  (define-key chameleon-prefix-map (kbd "T") 'my/pivot-words)
   (global-set-key (kbd "<f5>")
                   'chameleon-prefix-map))
 
