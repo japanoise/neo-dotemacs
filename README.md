@@ -76,7 +76,10 @@ date, here's some of the features, anti-features, and design goals:
 - Keep all the cool uemacs/emacs-mode bindings that I now love. C-u and C-z in
   particular are my babies.
 - Keep chameleon-prefix on F5 because it's burned into my fingers now.
-- Snazzy uses a bright color for comments rather than a dark one.
+- Snazzy uses a bright color for comments rather than a dark one. Why?
+  [Because I read an article ages
+  ago](https://jameshfisher.com/2014/05/11/your-syntax-highlighter-is-wrong/)
+  that changed the way I think about comments.
 
 For the most part, the main difference someone who switched from the old to the
 new would notice is that now there's Ido instead of Helm and the Snazzy theme is
