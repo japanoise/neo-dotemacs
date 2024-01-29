@@ -551,6 +551,8 @@ Version 2017-11-01"
  '(font-lock-comment-delimiter-face ((t (:background "purple4" :foreground "plum"))))
  '(font-lock-comment-face ((t (:background "purple4" :foreground "plum"))))
  '(mouse ((t (:background "white"))))
+ '(org-link ((t (:foreground "light slate blue" :underline t))))
+ '(outline-4 ((t (:foreground "turquoise"))))
  '(tooltip ((t (:inherit default :background "#34353e" :foreground "white")))))
 
 (provide 'init)
