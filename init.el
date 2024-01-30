@@ -353,6 +353,10 @@ Version 2017-11-01"
 ;; Doesn't work on windows so don't bother
 (unless (eq system-type 'windows-nt)
   (use-package exec-path-from-shell)
+  (when (file-exists-p "~/.zshenv")
+    (setq exec-path-from-shell-arguments nil))
+  (dolist (var '("PERL5LIB" "PERL_LOCAL_LIB_ROOT" "PERL_MB_OPT" "PERL_MM_OPT"))
+    (add-to-list 'exec-path-from-shell-variables var))
   (exec-path-from-shell-initialize))
 
 ;; Flycheck and Flyspell
