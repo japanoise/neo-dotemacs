@@ -502,6 +502,11 @@ Version 2017-11-01"
   (eldoc-mode -1))
 (add-hook 'renpy-mode-hook 'my/renpy-hook)
 
+;; racket-mode
+(use-package racket-mode
+  :bind (:map racket-mode-map
+              ("<f5>" . nil)))
+
 ;; dumb-jump
 (use-package dumb-jump)
 (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
@@ -567,7 +572,7 @@ Version 2017-11-01"
  '(doom-modeline-mode t)
  '(lua-indent-level 2)
  '(package-selected-packages
-   '(mines renpy gradle-mode typescript-mode treemacs elixir-mode cmake-mode lua-mode lsp-mode elpher webpaste visual-fill-column go-rename company-go godoctor rainbow-mode exec-path-from-shell browse-kill-ring dumb-jump go-mode company auto-complete auto-package-update no-littering editorconfig smex markdown-mode wc-mode flycheck smartparens rainbow-delimiters delight base16-theme diminish anzu use-package)))
+   '(racket-mode mines renpy gradle-mode typescript-mode treemacs elixir-mode cmake-mode lua-mode lsp-mode elpher webpaste visual-fill-column go-rename company-go godoctor rainbow-mode exec-path-from-shell browse-kill-ring dumb-jump go-mode company auto-complete auto-package-update no-littering editorconfig smex markdown-mode wc-mode flycheck smartparens rainbow-delimiters delight base16-theme diminish anzu use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
