@@ -584,6 +584,13 @@ Version 2017-11-01"
  '(mouse ((t (:background "white"))))
  '(org-link ((t (:foreground "light slate blue" :underline t))))
  '(outline-4 ((t (:foreground "turquoise"))))
+ '(term-color-bright-blue ((t (:inherit term-color-blue))))
+ '(term-color-bright-cyan ((t (:inherit term-color-cyan))))
+ '(term-color-bright-green ((t (:inherit term-color-green))))
+ '(term-color-bright-magenta ((t (:inherit term-color-magenta))))
+ '(term-color-bright-red ((t (:inherit term-color-red))))
+ '(term-color-bright-white ((t (:inherit term-color-white))))
+ '(term-color-bright-yellow ((t (:inherit term-color-yellow))))
  '(tooltip ((t (:inherit default :background "#34353e" :foreground "white")))))
 
 (provide 'init)
