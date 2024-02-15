@@ -533,9 +533,12 @@ Version 2017-11-01"
 (setq doom-modeline-continuous-word-count-modes '(markdown-mode gfm-mode org-mode))
 
 ;; Word wrap
-(use-package visual-fill-column)
-(add-hook 'visual-line-mode-hook #'visual-fill-column-mode)
-(setq-default visual-fill-column-center-text t)
+(use-package olivetti)
+
+; Older version; works OK.
+;(use-package visual-fill-column)
+;(add-hook 'visual-line-mode-hook #'visual-fill-column-mode)
+;(setq-default visual-fill-column-center-text t)
 
 ;; Webpaste
 (use-package webpaste)
@@ -571,8 +574,10 @@ Version 2017-11-01"
  '(doom-modeline-height 21)
  '(doom-modeline-mode t)
  '(lua-indent-level 2)
+ '(olivetti-body-width 80)
+ '(olivetti-style nil)
  '(package-selected-packages
-   '(racket-mode mines renpy gradle-mode typescript-mode treemacs elixir-mode cmake-mode lua-mode lsp-mode elpher webpaste visual-fill-column go-rename company-go godoctor rainbow-mode exec-path-from-shell browse-kill-ring dumb-jump go-mode company auto-complete auto-package-update no-littering editorconfig smex markdown-mode wc-mode flycheck smartparens rainbow-delimiters delight base16-theme diminish anzu use-package)))
+   '(olivetti racket-mode mines renpy gradle-mode typescript-mode treemacs elixir-mode cmake-mode lua-mode lsp-mode elpher webpaste visual-fill-column go-rename company-go godoctor rainbow-mode exec-path-from-shell browse-kill-ring dumb-jump go-mode company auto-complete auto-package-update no-littering editorconfig smex markdown-mode wc-mode flycheck smartparens rainbow-delimiters delight base16-theme diminish anzu use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
