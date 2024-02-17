@@ -29,8 +29,8 @@ is one such case. Some things wrong with it:
   this](https://github.com/emacs-helm/helm/issues/2386); apparently it's
   [damaging to the maintainer's family,
   too](https://sachachua.com/blog/2018/09/interview-with-thierry-volpiatto/).
-  Ido is simpler and bundled with Emacs, so I'm trying it out now (I never used
-  any advanced helm features anyway, just used it as a completion engine).
+  Ivy seems more my speed, so I'm trying it out now (I never used any advanced
+  helm features anyway, just used it as a completion engine).
 
 And the main one: My desire was a .emacs.d that you could just clone into your
 home directory and forget about. I even set up some of my scripts to do
@@ -45,7 +45,7 @@ So, in the proud tradition of other Emacs-heads before me, I am tearing down and
 building up my .emacs.d from scratch. While I never keep these READMEs up to
 date, here's some of the features, anti-features, and design goals:
 
-- Use Ido rather than Helm - as above. I loved Helm's fuzzy-find, but the
+- Use Ivy rather than Helm - as above. I loved Helm's fuzzy-find, but the
   package sorely lacked intuitivity, even for someone used to Emacs bindings. I
   think it's better that I learned how to do things in a very slightly tweaked
   Emacs (such as using C-x C-b to kill multiple buffers) rather than learning
@@ -82,8 +82,8 @@ date, here's some of the features, anti-features, and design goals:
   that changed the way I think about comments.
 
 For the most part, the main difference someone who switched from the old to the
-new would notice is that now there's Ido instead of Helm and the Snazzy theme is
-the default.
+new would notice is that now there's Ivy instead of Helm and the Snazzy theme is
+the default and only one.
 
 ## Dependencies
 

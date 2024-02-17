@@ -298,17 +298,11 @@ Version 2017-11-01"
 (add-to-list 'auto-mode-alist
              '("\\.gitignore$" . hosts-generic-mode)) ;; Highlight comments for .gitignore files
 
-;; Ido - starting to prefer it over helm.
-(require 'ido)
-(ido-mode t)
-(setq ido-enable-flex-matching t)
-(use-package smex)
-(smex-initialize)
-(global-set-key (kbd "M-x") 'smex)
-
-;; browse-kill-ring - alternative to helm's M-y behavior
-(use-package browse-kill-ring)
-(browse-kill-ring-default-keybindings)
+;; Ivy - best of both worlds between Ido & Helm
+(use-package ivy)
+(use-package counsel)
+(counsel-mode)
+(global-set-key (kbd "C-x b") 'counsel-switch-buffer)
 
 ;; Auto completion with company.
 ;; It sucks, but the alternatives suck more.
@@ -573,11 +567,12 @@ Version 2017-11-01"
  '(doom-modeline-enable-word-count t)
  '(doom-modeline-height 21)
  '(doom-modeline-mode t)
+ '(ivy-action-wrap t)
  '(lua-indent-level 2)
  '(olivetti-body-width 80)
  '(olivetti-style nil)
  '(package-selected-packages
-   '(olivetti racket-mode mines renpy gradle-mode typescript-mode treemacs elixir-mode cmake-mode lua-mode lsp-mode elpher webpaste visual-fill-column go-rename company-go godoctor rainbow-mode exec-path-from-shell browse-kill-ring dumb-jump go-mode company auto-complete auto-package-update no-littering editorconfig smex markdown-mode wc-mode flycheck smartparens rainbow-delimiters delight base16-theme diminish anzu use-package)))
+   '(counsel ivy olivetti racket-mode mines renpy gradle-mode typescript-mode treemacs elixir-mode cmake-mode lua-mode lsp-mode elpher webpaste visual-fill-column go-rename company-go godoctor rainbow-mode exec-path-from-shell browse-kill-ring dumb-jump go-mode company auto-complete auto-package-update no-littering editorconfig smex markdown-mode wc-mode flycheck smartparens rainbow-delimiters delight base16-theme diminish anzu use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
