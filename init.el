@@ -15,6 +15,10 @@
 ;; Load path
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor"))
 
+;; My own customization group
+(defgroup my-custom-group nil "My customization group."
+  :group 'extensions)
+
 ;; Some keys
 (global-set-key [f6]
                 'universal-argument)
@@ -151,7 +155,8 @@ Version 2017-11-01"
 ;; Emacs-y tilde fringe
 (defface fringe-tilde-face
   '((t :foreground "#57c7ff"))
-  "Used to display tildes in the fringe")
+  "Used to display tildes in the fringe."
+  :group 'my-custom-group)
 (setq-default indicate-empty-lines t)
 (progn
   (define-fringe-bitmap 'tilde
@@ -199,11 +204,11 @@ Version 2017-11-01"
         (replace-match (number-to-string (funcall change number)))
         (goto-char point)))))
 (defun my-increment-number-at-point ()
-  "Increment number at point like vim's C-a."
+  "Increment number at point like vim's ^A."
   (interactive)
   (my-change-number-at-point '1+ ))
 (defun my-decrement-number-at-point ()
-  "Decrement number at point like vim's C-x."
+  "Decrement number at point like vim's ^X."
   (interactive)
   (my-change-number-at-point '1- ))
 
@@ -229,9 +234,6 @@ Version 2017-11-01"
 
 ;; Never load settings from .Xresources
 (setq inhibit-x-resources t)
-
-;; C - some setup
-(setq c-default-style "linux")
 
 ;; Ascii table - https://www.emacswiki.org/emacs/AsciiTable
 (defun ascii-table ()
@@ -560,6 +562,7 @@ Version 2017-11-01"
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(c-default-style "linux")
  '(column-number-mode t)
  '(custom-safe-themes
    '("7220c44ef252ec651491125f1d95ad555fdfdc88f872d3552766862d63454582" default))
