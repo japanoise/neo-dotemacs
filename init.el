@@ -404,6 +404,10 @@ Version 2017-11-01"
 (use-package treemacs
   :bind ([mouse-1] . treemacs-single-click-expand-action))
 
+;; Similar to treemacs - org outline in sidebar
+(use-package org-side-tree)
+(setq outline-minor-mode-cycle t)
+
 ;; Markdown mode
 (defun my/insert-markdown-link ()
   "Insert a markdown link (known behavior from tiddlywiki)."
@@ -562,7 +566,8 @@ Version 2017-11-01"
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(c-default-style "linux")
+ '(add-log-full-name "japanoise")
+ '(add-log-mailing-address "japanoise@seekrit.club")
  '(column-number-mode t)
  '(custom-safe-themes
    '("7220c44ef252ec651491125f1d95ad555fdfdc88f872d3552766862d63454582" default))
@@ -575,7 +580,7 @@ Version 2017-11-01"
  '(olivetti-body-width 80)
  '(olivetti-style nil)
  '(package-selected-packages
-   '(counsel ivy olivetti racket-mode mines renpy gradle-mode typescript-mode treemacs elixir-mode cmake-mode lua-mode lsp-mode elpher webpaste visual-fill-column go-rename company-go godoctor rainbow-mode exec-path-from-shell browse-kill-ring dumb-jump go-mode company auto-complete auto-package-update no-littering editorconfig smex markdown-mode wc-mode flycheck smartparens rainbow-delimiters delight base16-theme diminish anzu use-package)))
+   '(org-side-tree counsel ivy olivetti racket-mode mines renpy gradle-mode typescript-mode treemacs elixir-mode cmake-mode lua-mode lsp-mode elpher webpaste visual-fill-column go-rename company-go godoctor rainbow-mode exec-path-from-shell browse-kill-ring dumb-jump go-mode company auto-complete auto-package-update no-littering editorconfig smex markdown-mode wc-mode flycheck smartparens rainbow-delimiters delight base16-theme diminish anzu use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
