@@ -483,6 +483,9 @@ Version 2017-11-01"
 ;; Typescript Mode
 (use-package typescript-mode)
 
+;; yaml mode
+(use-package yaml-mode)
+
 ;; cmake
 (use-package cmake-mode)
 
