@@ -583,15 +583,15 @@ Version 2017-11-01"
  '(olivetti-body-width 80)
  '(olivetti-style nil)
  '(package-selected-packages
-   '(org-side-tree counsel ivy olivetti racket-mode mines renpy gradle-mode typescript-mode treemacs elixir-mode cmake-mode lua-mode lsp-mode elpher webpaste visual-fill-column go-rename company-go godoctor rainbow-mode exec-path-from-shell browse-kill-ring dumb-jump go-mode company auto-complete auto-package-update no-littering editorconfig smex markdown-mode wc-mode flycheck smartparens rainbow-delimiters delight base16-theme diminish anzu use-package)))
+   '(yaml-mode org-side-tree counsel ivy olivetti racket-mode mines renpy gradle-mode typescript-mode treemacs elixir-mode cmake-mode lua-mode lsp-mode elpher webpaste visual-fill-column go-rename company-go godoctor rainbow-mode exec-path-from-shell browse-kill-ring dumb-jump go-mode company auto-complete auto-package-update no-littering editorconfig smex markdown-mode wc-mode flycheck smartparens rainbow-delimiters delight base16-theme diminish anzu use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(fixed-pitch ((t (:family "Go Mono"))))
- '(font-lock-comment-delimiter-face ((t (:background "purple4" :foreground "plum"))))
- '(font-lock-comment-face ((t (:background "purple4" :foreground "plum"))))
+ '(font-lock-comment-delimiter-face ((t (:foreground "rosy brown"))))
+ '(font-lock-comment-face ((t (:foreground "rosy brown"))))
  '(mouse ((t (:background "white"))))
  '(org-link ((t (:foreground "light slate blue" :underline t))))
  '(outline-4 ((t (:foreground "turquoise"))))
