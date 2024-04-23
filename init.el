@@ -303,6 +303,7 @@ Version 2017-11-01"
 ;; Ivy - best of both worlds between Ido & Helm
 (use-package ivy)
 (use-package counsel)
+(ivy-mode 1)
 (counsel-mode)
 (global-set-key (kbd "C-x b") 'counsel-switch-buffer)
 
