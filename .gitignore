@@ -1,0 +1,37 @@
+# no-littering
+/etc
+/var
+
+# Dl'd packages
+/elpa
+
+# Ido history
+/ido.last
+/smex-items
+
+# random directories
+/server
+/eshell
+/transient
+
+# private, differs between machines
+/recentf
+/auto-save-list
+
+# https://github.com/github/gitignore/blob/master/Elisp.gitignore
+# Compiled
+*.elc
+# Packaging
+.cask
+# Backup files
+*~
+# Undo-tree save-files
+*.~undo-tree
+
+# markdown preview
+/emacs-livedown/
+
+# Local setup
+/local.el
+/elpaca/
+/tree-sitter/
