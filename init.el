@@ -479,16 +479,16 @@ Version 2017-11-01"
 ;; |                                                                           |
 ;; `---------------------------------------------------------------------------'
 
-;; typst-ts-mode - see https://git.sr.ht/~meow_king/typst-ts-mode
-(add-to-list 'treesit-language-source-alist
-             '(typst "https://github.com/uben0/tree-sitter-typst"))
-(treesit-install-language-grammar 'typst)
-
 (use-package typst-ts-mode
   :ensure (:type git
                  :host sourcehut
                  :repo "meow_king/typst-ts-mode"
-                 :files (:defaults "*.el")))
+                 :files (:defaults "*.el"))
+  :config
+  ;; typst-ts-mode - see https://git.sr.ht/~meow_king/typst-ts-mode
+  (add-to-list 'treesit-language-source-alist
+               '(typst "https://github.com/uben0/tree-sitter-typst"))
+  (treesit-install-language-grammar 'typst))
 
 ;; Similar to treemacs - org outline in sidebar
 (use-package org-side-tree
@@ -603,7 +603,6 @@ Version 2017-11-01"
 
 ;; doom modeline
 (use-package doom-modeline
-  :ensure t
   :config
   (doom-modeline-mode 1)
   (setq doom-modeline-continuous-word-count-modes '(markdown-mode gfm-mode org-mode)))
