@@ -631,6 +631,7 @@ Version 2017-11-01"
  '(column-number-mode t)
  '(custom-safe-themes
    '("7220c44ef252ec651491125f1d95ad555fdfdc88f872d3552766862d63454582" default))
+ '(dired-dwim-target 'dired-dwim-target-next)
  '(doom-modeline-default-eol-type 0)
  '(doom-modeline-enable-word-count t)
  '(doom-modeline-height 21)
