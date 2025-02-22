@@ -15,6 +15,8 @@
 
 ;; Load path
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
+(add-to-list 'custom-theme-load-path (expand-file-name "~/.emacs.d/lisp"))
 
 (setq inhibit-startup-message t)
 

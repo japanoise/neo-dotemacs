@@ -387,8 +387,8 @@ Version 2017-11-01"
 (use-package base16-theme
   :config
   (setq base16-highlight-mode-line 'contrast)
-  ;; Snazzy theme!
-  (load-theme 'base16-snazzy t))
+  (require 'base16-japanoise-uchupp-theme)
+  (load-theme 'base16-japanoise-uchupp t))
 
 ;; Rainbow Delimiters
 (use-package rainbow-delimiters
@@ -629,8 +629,6 @@ Version 2017-11-01"
  '(add-log-full-name "japanoise")
  '(add-log-mailing-address "japanoise@seekrit.club")
  '(column-number-mode t)
- '(custom-safe-themes
-   '("7220c44ef252ec651491125f1d95ad555fdfdc88f872d3552766862d63454582" default))
  '(dired-dwim-target 'dired-dwim-target-next)
  '(doom-modeline-default-eol-type 0)
  '(doom-modeline-enable-word-count t)
@@ -649,13 +647,22 @@ Version 2017-11-01"
  '(mouse ((t (:background "white"))))
  '(org-link ((t (:foreground "light slate blue" :underline t))))
  '(outline-4 ((t (:foreground "turquoise"))))
- '(term-color-bright-blue ((t (:inherit term-color-blue))))
- '(term-color-bright-cyan ((t (:inherit term-color-cyan))))
- '(term-color-bright-green ((t (:inherit term-color-green))))
- '(term-color-bright-magenta ((t (:inherit term-color-magenta))))
- '(term-color-bright-red ((t (:inherit term-color-red))))
- '(term-color-bright-white ((t (:inherit term-color-white))))
- '(term-color-bright-yellow ((t (:inherit term-color-yellow))))
+ '(term-color-black ((t (:inherit default :background "#080a0d" :foreground "#080a0d"))))
+ '(term-color-bright-black ((t (:inherit default :background "#878a8b" :foreground "#878a8b"))))
+ '(term-color-red ((t (:inherit default :background "#a30d30" :foreground "#a30d30"))))
+ '(term-color-bright-red ((t (:inherit default :background "#ea3c65" :foreground "#ea3c65"))))
+ '(term-color-green ((t (:inherit default :background "#2e943a" :foreground "#2e943a"))))
+ '(term-color-bright-green ((t (:inherit default :background "#64d970" :foreground "#64d970"))))
+ '(term-color-yellow ((t (:inherit default :background "#b59944" :foreground "#b59944"))))
+ '(term-color-bright-yellow ((t (:inherit default :background "#fedf7b" :foreground "#fedf7b"))))
+ '(term-color-blue ((t (:inherit default :background "#0949ac" :foreground "#0949ac"))))
+ '(term-color-bright-blue ((t (:inherit default :background "#3984f2" :foreground "#3984f2"))))
+ '(term-color-magenta ((t (:inherit default :background "#8f2366" :foreground "#8f2366"))))
+ '(term-color-bright-magenta ((t (:inherit default :background "#ff6ac1" :foreground "#ff6ac1"))))
+ '(term-color-cyan ((t (:inherit default :background "#048888" :foreground "#048888"))))
+ '(term-color-bright-cyan ((t (:inherit default :background "#25d2d2" :foreground "#25d2d2"))))
+ '(term-color-white ((t (:inherit default :background "#cbcdcd" :foreground "#cbcdcd"))))
+ '(term-color-bright-white ((t (:inherit default :background "#fdfdfd" :foreground "#fdfdfd"))))
  '(tooltip ((t (:inherit default :background "#34353e" :foreground "white")))))
 
 (provide 'init)
