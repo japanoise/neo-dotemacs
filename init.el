@@ -3,11 +3,11 @@
 
 ;;; Code:
 
-;; ,---------------------------------------------------------------------------,
-;; |                                                                           |
-;; | elpaca - package manager                                                  |
-;; |                                                                           |
-;; `---------------------------------------------------------------------------'
+;; ┌───────────────────────────────────────────────────────────────────────────┐
+;; │                                                                           │
+;; │ elpaca - package manager                                                  │
+;; │                                                                           │
+;; └───────────────────────────────────────────────────────────────────────────┘
 
 (defvar elpaca-installer-version 0.7)
 (defvar elpaca-directory (expand-file-name "elpaca/" user-emacs-directory))
@@ -61,11 +61,11 @@
 ;; Block until current queue processed.
 (elpaca-wait)
 
-;; ,---------------------------------------------------------------------------,
-;; |                                                                           |
-;; | my key bindings - permanently burned into my fingers                      |
-;; |                                                                           |
-;; `---------------------------------------------------------------------------'
+;; ┌───────────────────────────────────────────────────────────────────────────┐
+;; │                                                                           │
+;; │ my key bindings - permanently burned into my fingers                      │
+;; │                                                                           │
+;; └───────────────────────────────────────────────────────────────────────────┘
 
 (global-set-key [f6]
                 'universal-argument)
@@ -168,11 +168,11 @@ Version 2017-11-01"
 (global-set-key (kbd "<kp-subtract>")
                 'my-decrement-number-at-point)
 
-;; ,---------------------------------------------------------------------------,
-;; |                                                                           |
-;; | my rice - I like my Emacs to look pretty~                                 |
-;; |                                                                           |
-;; `---------------------------------------------------------------------------'
+;; ┌───────────────────────────────────────────────────────────────────────────┐
+;; │                                                                           │
+;; │ my rice - I like my Emacs to look pretty~                                 │
+;; │                                                                           │
+;; └───────────────────────────────────────────────────────────────────────────┘
 
 (defgroup my-custom-group nil "My customization group."
   :group 'extensions)
@@ -245,11 +245,11 @@ Version 2017-11-01"
 ;; Never load settings from .Xresources
 (setq inhibit-x-resources t)
 
-;; ,---------------------------------------------------------------------------,
-;; |                                                                           |
-;; | annoyances - make Emacs do what I want it to, not what was trendy in 1995 |
-;; |                                                                           |
-;; `---------------------------------------------------------------------------'
+;; ┌───────────────────────────────────────────────────────────────────────────┐
+;; │                                                                           │
+;; │ annoyances - make Emacs do what I want it to, not what was trendy in 1995 │
+;; │                                                                           │
+;; └───────────────────────────────────────────────────────────────────────────┘
 
 ;; Never ever ring the bell
 (setq ring-bell-function 'ignore)
@@ -290,11 +290,11 @@ Version 2017-11-01"
 ;; Spaces by default (momentum)
 (setq-default indent-tabs-mode nil)
 
-;; ,---------------------------------------------------------------------------,
-;; |                                                                           |
-;; | useful functions - some used for init, some not                           |
-;; |                                                                           |
-;; `---------------------------------------------------------------------------'
+;; ┌───────────────────────────────────────────────────────────────────────────┐
+;; │                                                                           │
+;; │ useful functions - some used for init, some not                           │
+;; │                                                                           │
+;; └───────────────────────────────────────────────────────────────────────────┘
 
 ;; For local setup
 (defun my/load-file-if-exists (file)
@@ -331,11 +331,11 @@ Version 2017-11-01"
     (interactive)
     (kill-new (buffer-file-name (window-buffer (minibuffer-selected-window)))))
 
-;; ,---------------------------------------------------------------------------,
-;; |                                                                           |
-;; | utility packages - i.e. stuff that helps customization, convenience       |
-;; |                                                                           |
-;; `---------------------------------------------------------------------------'
+;; ┌───────────────────────────────────────────────────────────────────────────┐
+;; │                                                                           │
+;; │ utility packages - i.e. stuff that helps customization, convenience       │
+;; │                                                                           │
+;; └───────────────────────────────────────────────────────────────────────────┘
 
 ;; Diminish - for noisy minor modes
 (use-package diminish)
@@ -473,11 +473,11 @@ Version 2017-11-01"
 (use-package treemacs
   :bind ([mouse-1] . treemacs-single-click-expand-action))
 
-;; ,---------------------------------------------------------------------------,
-;; |                                                                           |
-;; | language packages - programming languages &c.                             |
-;; |                                                                           |
-;; `---------------------------------------------------------------------------'
+;; ┌───────────────────────────────────────────────────────────────────────────┐
+;; │                                                                           │
+;; │ language packages - programming languages &c.                             │
+;; │                                                                           │
+;; └───────────────────────────────────────────────────────────────────────────┘
 
 (use-package typst-ts-mode
   :ensure (:type git
@@ -607,11 +607,11 @@ Version 2017-11-01"
   (doom-modeline-mode 1)
   (setq doom-modeline-continuous-word-count-modes '(markdown-mode gfm-mode org-mode)))
 
-;; ,---------------------------------------------------------------------------,
-;; |                                                                           |
-;; | miscellaneous wrapping up                                                 |
-;; |                                                                           |
-;; `---------------------------------------------------------------------------'
+;; ┌───────────────────────────────────────────────────────────────────────────┐
+;; │                                                                           │
+;; │ miscellaneous wrapping up                                                 │
+;; │                                                                           │
+;; └───────────────────────────────────────────────────────────────────────────┘
 
 ;; Enabled commands
 (put 'downcase-region 'disabled nil)
