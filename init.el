@@ -475,6 +475,8 @@ Version 2017-11-01"
 ;; │                                                                           │
 ;; └───────────────────────────────────────────────────────────────────────────┘
 
+(use-package git-modes)
+
 (use-package typst-ts-mode
   :ensure (:type git
                  :host sourcehut
