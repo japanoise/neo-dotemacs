@@ -633,6 +633,7 @@ Version 2017-11-01"
  '(doom-modeline-height 21)
  '(doom-modeline-mode t)
  '(ivy-action-wrap t)
+ '(lsp-clients-clangd-args '("--header-insertion=never"))
  '(lua-indent-level 2))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
