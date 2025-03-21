@@ -63,6 +63,12 @@
 ;; │                                                                           │
 ;; └───────────────────────────────────────────────────────────────────────────┘
 
+;; There should be a better way to do this, but afaict this is the best way :(
+(defalias 'unindent-line
+  (kmacro "C-SPC C-a C-x <tab> S-<left> C-e"))
+(global-set-key [backtab]
+                'unindent-line)
+
 (global-set-key [f6]
                 'universal-argument)
 (define-key universal-argument-map [f6] 'universal-argument-more)
