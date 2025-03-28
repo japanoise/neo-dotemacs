@@ -489,6 +489,7 @@ Version 2017-11-01"
   (which-key-mode))
 
 ;; Magit + bindings
+(use-package transient)
 (use-package diff-hl)
 (use-package magit
   :bind (("C-x g" . magit-status) :map chameleon-prefix-map
