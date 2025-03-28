@@ -106,10 +106,51 @@
   (transpose-words 1)
   (backward-word))
 
+(defun my/insert-en-dash ()
+  "Insert an en dash."
+  (interactive)
+  (insert "–"))
+
+(defun my/insert-em-dash ()
+  "Insert an em dash."
+  (interactive)
+  (insert "—"))
+
+(defun my/insert-hr (ch)
+  "Insert a line of `fill-column' - 1 instances of CH."
+  (let ((i 0))
+  (while (< i fill-column)
+    (insert ch)
+    (setq i (1+ i)))))
+
+(defun my/insert-hyphen-hr ()
+  "Use `my/insert-hr' to make a horizontal rule of hyphens."
+  (interactive)
+  (my/insert-hr "-"))
+
+(defun my/insert-asterisk-hr ()
+  "Use `my/insert-hr' to make a horizontal rule of asterisks."
+  (interactive)
+  (my/insert-hr "*"))
+
+(defun my/insert-eq-hr ()
+  "Use `my/insert-hr' to make a horizontal rule of eqs."
+  (interactive)
+  (my/insert-hr "="))
+
+(global-set-key (kbd "C--") 'my/insert-en-dash)
+
+(global-set-key (kbd "C-M--") 'my/insert-em-dash)
+
 ;; chameleon-prefix
 (progn
   (defvar chameleon-prefix-map)
   (define-prefix-command 'chameleon-prefix-map)
+  (define-key chameleon-prefix-map (kbd "- -") 'my/insert-hyphen-hr)
+  (define-key chameleon-prefix-map (kbd "- *") 'my/insert-asterisk-hr)
+  (define-key chameleon-prefix-map (kbd "- =") 'my/insert-eq-hr)
+  (define-key chameleon-prefix-map (kbd "- n") 'my/insert-en-dash)
+  (define-key chameleon-prefix-map (kbd "- m") 'my/insert-em-dash)
   (define-key chameleon-prefix-map (kbd "s") 'replace-string)
   (define-key chameleon-prefix-map (kbd "r") 'replace-regexp)
   (define-key chameleon-prefix-map (kbd "q r") 'query-replace-regexp)
