@@ -653,6 +653,9 @@ Version 2017-11-01"
   (doom-modeline-mode 1)
   (setq doom-modeline-continuous-word-count-modes '(markdown-mode gfm-mode org-mode)))
 
+;; caddyfile
+(use-package caddyfile-mode)
+
 ;; ┌───────────────────────────────────────────────────────────────────────────┐
 ;; │                                                                           │
 ;; │ miscellaneous wrapping up                                                 │
