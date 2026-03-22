@@ -1,0 +1,308 @@
+;;; japanoise-compose --- compose-key style functionality
+
+;;; Commentary:
+
+;;; Code:
+
+(defvar japanoise-compose-hash
+  (make-hash-table)
+  "Mapping of two-byte strings to UTF-8 strings.")
+
+;; U+00A6       ¦       Broken bar
+;; U+00A8       ¨       Diaeresis
+;; U+00AA       ª       Feminine ordinal indicator
+;; U+00AB       «       Left-pointing double angle quotation mark
+;; U+00AD               Soft hyphen     SHY
+;; U+00AF       ¯       Macron
+;; U+00B0       °       Degree symbol
+;; U+00B1       ±       Plus-minus sign
+;; U+00B9       ¹       Superscript one
+;; U+00B2       ²       Superscript two
+;; U+00B3       ³       Superscript three
+;; U+00B4       ´       Acute accent
+;; U+00B5       µ       Micro sign
+;; U+00B6       ¶       Pilcrow sign
+;; U+00B7       ·       Middle dot
+;; U+00B8       ¸       Cedilla
+;; U+00BA       º       Masculine ordinal indicator
+;; U+00BB       »       Right-pointing double angle quotation mark
+;; U+00BC       ¼       Vulgar fraction one quarter
+;; U+00BD       ½       Vulgar fraction one half
+;; U+00BE       ¾       Vulgar fraction three quarters
+;; Letters
+;; U+00C5       Å       Latin Capital letter A with ring above
+;; U+00C7       Ç       Latin Capital letter C with cedilla
+;; Mathematical operator
+;; U+00D7       ×       Multiplication sign
+;; Letters
+;; U+00E5       å       Latin Small Letter A with ring above
+;; U+00E7       ç       Latin Small Letter C with cedilla
+;; Mathematical operator
+;; U+00F7       ÷       Division sign
+;; Letters
+
+;; Insert initial values
+(dolist (key-value
+         '(
+           ;; ----- Runes (futhorc) ---------------------------
+           '("rA" "ᚫ")
+           '("ra" "ᚪ")
+           '("rb" "ᛒ")
+           '("rc" "ᚳ")
+           '("rd" "ᛞ")
+           '("rE" "ᛠ")
+           '("re" "ᛖ")
+           '("rf" "ᚠ")
+           '("rg" "ᚷ")
+           '("rh" "ᚻ")
+           '("rH" "ᚺ")
+           '("ri" "ᛁ")
+           '("rI" "ᛇ")
+           '("rj" "ᛡ")
+           '("rJ" "ᛄ")
+           '("rl" "ᛚ")
+           '("rm" "ᛗ")
+           '("rn" "ᚾ")
+           '("rN" "ᛝ")
+           '("rO" "ᛟ")
+           '("ro" "ᚩ")
+           '("rp" "ᛈ")
+           '("rr" "ᚱ")
+           '("rs" "ᛋ")
+           '("rS" "ᚴ")
+           '("rT" "ᚦ")
+           '("rt" "ᛏ")
+           '("ru" "ᚢ")
+           '("rw" "ᚹ")
+           '("rx" "ᛉ")
+           '("ry" "ᚣ")
+           ;; ----- Greek -------------------------------------
+           '("Ga" "Α")
+           '("Gb" "Β")
+           '("Gg" "Γ")
+           '("Gd" "Δ")
+           '("Ge" "Ε")
+           '("Gz" "Ζ")
+           '("GE" "Η")
+           '("GT" "Θ")
+           '("Gi" "Ι")
+           '("Gk" "Κ")
+           '("Gl" "Λ")
+           '("Gm" "Μ")
+           '("Gn" "Ν")
+           '("Gx" "Ξ")
+           '("GO" "Ο")
+           '("Gp" "Π")
+           '("Gr" "Ρ")
+           '("Gs" "Σ")
+           '("Gt" "Τ")
+           '("Gu" "Υ")
+           '("Gf" "Φ")
+           '("GX" "Χ")
+           '("GP" "Ψ")
+           '("Go" "Ω")
+           '("ga" "α")
+           '("gb" "β")
+           '("gg" "γ")
+           '("gd" "δ")
+           '("ge" "ε")
+           '("gz" "ζ")
+           '("gE" "η")
+           '("gT" "θ")
+           '("gi" "ι")
+           '("gk" "κ")
+           '("gl" "λ")
+           '("gm" "μ")
+           '("gn" "ν")
+           '("gx" "ξ")
+           '("gO" "ο")
+           '("gp" "π")
+           '("gr" "ρ")
+           '("gs" "σ")
+           '("gt" "τ")
+           '("gu" "υ")
+           '("gf" "φ")
+           '("gX" "χ")
+           '("gP" "ψ")
+           '("go" "ω")
+           ;; ----- Symbols -----------------------------------
+           '(":)" "☺")
+           '(":(" "☹")
+           '("3<" "♠")
+           '("o8" "♣")
+           '("<3" "♥")
+           '("<>" "♦")
+           '("CO" "©")
+           '("RO" "®")
+           ;; ----- Typography & punctuation ------------------
+           '("PP" "¶")
+           '("SS" "§")
+           '("!?" "‽")
+           '("?!" "‽")
+           '("*o" "•")
+           '("!!" "¡")
+           '("??" "¿")
+           ;; ----- Currencies --------------------------------
+           '("|c" "¢")
+           '("|C" "¢")
+           '("$c" "¢")
+           '("$C" "¢")
+           '("l-" "£")
+           '("L-" "£")
+           '("$l" "£")
+           '("$L" "£")
+           '("$*" "¤")
+           '("$E" "€")
+           '("=E" "€")
+           '("$e" "€")
+           '("=e" "€")
+           '("$y" "¥")
+           '("$Y" "¥")
+           '("Y=" "¥")
+           ;; ----- Mathematical symbols ----------------------
+           '("!=" "≠")
+           '("/=" "≠")
+           '("=/" "≠")
+           '("~=" "≈")
+           '("=~" "≈")
+           '("<=" "≤")
+           '(">=" "≥")
+           '("<_" "≤")
+           '(">_" "≥")
+           '("ox" "⊗")
+           '("o+" "⊕")
+           '("><" "×")
+           '("-:" "÷")
+           '(":-" "÷")
+           '("*m" "×")
+           '("/m" "÷")
+           '("m*" "×")
+           '("m/" "÷")
+           '("m!" "¬")
+           '("+-" "±")
+           '("88" "∞")
+           '("Sq" "√")
+           ;; ----- Letters that aren't in modern English -----
+           '("ss" "ß")
+           ;; auld englisc & norse
+           '("AE" "Æ")
+           '("ae" "æ")
+           '("Ae" "Ǣ")
+           '("aE" "ǣ")
+           '("TH" "Þ")
+           '("th" "þ")
+           '("DH" "Ð")
+           '("dh" "ð")
+           '("O/" "Ø")
+           '("o/" "ø")
+           ;; ----- Letters with diacritics -------------------
+           '("AO" "Å")
+           '("Ao" "Å")
+           '("aO" "å")
+           '("ao" "å")
+           '("C5" "Ç")
+           '("c5" "ç")
+           '("CS" "Ç")
+           '("cS" "ç")
+           '("Cs" "Ç")
+           '("cs" "ç")
+           ;; acutes
+           '("A'" "Á")
+           '("E'" "É")
+           '("I'" "Í")
+           '("O'" "Ó")
+           '("U'" "Ú")
+           '("a'" "á")
+           '("e'" "é")
+           '("i'" "í")
+           '("o'" "ó")
+           '("u'" "ú")
+           ;; graves
+           '("A`" "À")
+           '("E`" "È")
+           '("I`" "Ì")
+           '("O`" "Ò")
+           '("U`" "Ù")
+           '("a`" "à")
+           '("e`" "è")
+           '("i`" "ì")
+           '("o`" "ò")
+           '("u`" "ù")
+           ;; circumflexes
+           '("A^" "Â")
+           '("E^" "Ê")
+           '("I^" "Î")
+           '("O^" "Ô")
+           '("U^" "Û")
+           '("a^" "â")
+           '("e^" "ê")
+           '("i^" "î")
+           '("o^" "ô")
+           '("u^" "û")
+           ;; diaeresis
+           '("A\"" "Ä")
+           '("E\"" "Ë")
+           '("I\"" "Ï")
+           '("O\"" "Ö")
+           '("U\"" "Ü")
+           '("a\"" "ä")
+           '("e\"" "ë")
+           '("i\"" "ï")
+           '("o\"" "ö")
+           '("u\"" "ü")
+           '("A:" "Ä")
+           '("E:" "Ë")
+           '("I:" "Ï")
+           '("O:" "Ö")
+           '("U:" "Ü")
+           '("a:" "ä")
+           '("e:" "ë")
+           '("i:" "ï")
+           '("o:" "ö")
+           '("u:" "ü")
+           '("Y\"" "Ÿ")
+           '("y\"" "ÿ")
+           '("Y:" "Ÿ")
+           '("y:" "ÿ")
+           ;; tildes
+           '("O~" "Õ")
+           '("A~" "Ã")
+           '("N~" "Ñ")
+           '("o~" "õ")
+           '("a~" "ã")
+           '("n~" "ñ")
+           ;; macrons (overbars)
+           '("A-" "Ā")
+           '("E-" "Ē")
+           '("G-" "Ḡ")
+           '("I-" "Ī")
+           '("O-" "Ō")
+           '("U-" "Ū")
+           '("Y-" "Ȳ")
+           '("a-" "ā")
+           '("e-" "ē")
+           '("g-" "ḡ")
+           '("i-" "ī")
+           '("o-" "ō")
+           '("u-" "ū")
+           '("y-" "ȳ")
+           ))
+  (puthash (car key-value) (car (cdr key-value)) japanoise-compose-hash))
+
+(defun japanoise-compose-get (sequence)
+  "Get the UTF-8 string described by string SEQUENCE, or nil if not found."
+  (gethash sequence japanoise-compose-hash))
+
+(defun japanoise-compose-insert (sequence)
+  "Insert the UTF-8 string described by string SEQUENCE, if found."
+  (if (japanoise-compose-get sequence)
+        (insert sequence)
+      (message "Compose sequence %s not found" sequence)))
+
+(defun japanoise-compose ()
+  "Insert a key described by two ASCII characters, rather like the compose key."
+  (interactive)
+  (japanoise-compose-insert (string (read-key) (read-key))))
+
+(provide 'japanoise-compose)
+;;; japanoise-compose.el ends here
