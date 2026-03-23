@@ -656,6 +656,9 @@ Version 2017-11-01"
 ;; caddyfile
 (use-package caddyfile-mode)
 
+;; devdocs
+(use-package devdocs)
+
 ;; ┌───────────────────────────────────────────────────────────────────────────┐
 ;; │                                                                           │
 ;; │ miscellaneous wrapping up                                                 │

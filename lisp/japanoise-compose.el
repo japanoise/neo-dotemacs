@@ -8,39 +8,6 @@
   (make-hash-table)
   "Mapping of two-byte strings to UTF-8 strings.")
 
-;; U+00A6       ¦       Broken bar
-;; U+00A8       ¨       Diaeresis
-;; U+00AA       ª       Feminine ordinal indicator
-;; U+00AB       «       Left-pointing double angle quotation mark
-;; U+00AD               Soft hyphen     SHY
-;; U+00AF       ¯       Macron
-;; U+00B0       °       Degree symbol
-;; U+00B1       ±       Plus-minus sign
-;; U+00B9       ¹       Superscript one
-;; U+00B2       ²       Superscript two
-;; U+00B3       ³       Superscript three
-;; U+00B4       ´       Acute accent
-;; U+00B5       µ       Micro sign
-;; U+00B6       ¶       Pilcrow sign
-;; U+00B7       ·       Middle dot
-;; U+00B8       ¸       Cedilla
-;; U+00BA       º       Masculine ordinal indicator
-;; U+00BB       »       Right-pointing double angle quotation mark
-;; U+00BC       ¼       Vulgar fraction one quarter
-;; U+00BD       ½       Vulgar fraction one half
-;; U+00BE       ¾       Vulgar fraction three quarters
-;; Letters
-;; U+00C5       Å       Latin Capital letter A with ring above
-;; U+00C7       Ç       Latin Capital letter C with cedilla
-;; Mathematical operator
-;; U+00D7       ×       Multiplication sign
-;; Letters
-;; U+00E5       å       Latin Small Letter A with ring above
-;; U+00E7       ç       Latin Small Letter C with cedilla
-;; Mathematical operator
-;; U+00F7       ÷       Division sign
-;; Letters
-
 ;; Insert initial values
 (dolist (key-value
          '(
@@ -134,6 +101,7 @@
            '("<>" "♦")
            '("CO" "©")
            '("RO" "®")
+           '("||" "¦")
            ;; ----- Typography & punctuation ------------------
            '("PP" "¶")
            '("SS" "§")
@@ -159,6 +127,13 @@
            '("$y" "¥")
            '("$Y" "¥")
            '("Y=" "¥")
+           ;; ----- Numerals ----------------------------------
+           '("^1" "¹")
+           '("^2" "²")
+           '("^3" "³")
+           '("14" "¼")
+           '("12" "½")
+           '("34" "¾")
            ;; ----- Mathematical symbols ----------------------
            '("!=" "≠")
            '("/=" "≠")
