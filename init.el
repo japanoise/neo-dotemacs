@@ -249,6 +249,10 @@ Version 2017-11-01"
       (overwrite-mode (setq cursor-mode-status 0)))))
 (global-set-key (kbd "<insert>")
                 'my/toggle-overwrite-mode-and-change-cursor)
+;; For macos
+(when (eq system-type 'darwin)
+  (global-set-key (kbd "s-i")
+                  'my/toggle-overwrite-mode-and-change-cursor))
 
 ;; Nice frame title
 (setq frame-title-format "%b %&- emacs")
