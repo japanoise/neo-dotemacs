@@ -624,8 +624,9 @@ Version 2017-11-01"
 ;; yaml mode
 (use-package yaml-mode)
 
-;; cmake
-(use-package cmake-mode)
+;; cmake - broken on Mac for no apparent reason
+(unless (eq system-type 'darwin)
+  (use-package cmake-mode))
 
 ;; racket-mode
 (use-package racket-mode
