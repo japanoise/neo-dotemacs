@@ -614,6 +614,9 @@ Version 2017-11-01"
 (use-package go-eldoc
   :init (add-hook 'go-mode-hook 'go-eldoc-setup))
 
+;; Zig mode
+(use-package zig-mode)
+
 ;; Elixir
 (use-package elixir-mode)
 
