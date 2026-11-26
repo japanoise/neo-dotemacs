@@ -1,4 +1,4 @@
-;; base16-japanoise-uchupp-theme.el -- A base16 colorscheme
+;; base16-japanoise-uchupp-theme.el -- A base16 colorscheme  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;; Base16: (https://github.com/tinted-theming/home)
