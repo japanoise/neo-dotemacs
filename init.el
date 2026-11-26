@@ -473,13 +473,34 @@ Version 2017-11-01"
   :ensure t
   :init (global-flycheck-mode))
 
+(add-hook 'prog-mode-hook 'flyspell-prog-mode)
+(add-hook 'text-mode-hook 'flyspell-mode)
+
+;; Work around a bug in flyspell that breaks macros
+(with-eval-after-load 'flyspell
+  (defun my/flyspell-skip-during-macro (orig-fun &rest args)
+    "Skip `flyspell-post-command-hook' while defining or executing a kmacro."
+    (unless (or defining-kbd-macro executing-kbd-macro)
+      (apply orig-fun args)))
+
+  (advice-add 'flyspell-post-command-hook :around #'my/flyspell-skip-during-macro)
+
+  (defun my/flyspell-visible-after-macro ()
+    "Silently spellcheck the visible window with redisplay inhibited."
+    (when (and (bound-and-true-p flyspell-mode)
+               (not (minibufferp)))
+      (let ((inhibit-message t)
+            (inhibit-redisplay t)
+            (flyspell-issue-message-flag nil))
+        (save-excursion
+          (flyspell-region (window-start) (window-end))))))
+
+  (add-hook 'kbd-macro-termination-hook #'my/flyspell-visible-after-macro))
+
 (when (eq system-type 'windows-nt)
   ;; Windows' fussy spell setup.
   (setenv "DICTIONARY" "en_US")
   (setq ispell-program-name "hunspell"))
-
-(add-hook 'prog-mode-hook 'flyspell-prog-mode)
-(add-hook 'text-mode-hook 'flyspell-mode)
 
 (defun my/disable-flycheck () "Disable flycheck in buffer." (interactive)
        (flycheck-mode -1))
